@@ -1,0 +1,35 @@
+{
+    "name": "chatpickle-cucumber-examples",
+    "version": "1.0.0",
+    "description": "Cucumber Implementation of Chat Pickle (Lex Conversational Flow Tests)",
+    "keywords": [
+        "BDD",
+        "Chatbot",
+        "Conversation",
+        "Testing",
+        "Cucumber",
+        "AWS",
+        "Amazon",
+        "Lex"
+    ],
+    "author": "Aaron Arsenault",
+    "license": "UNLICENSED",
+    "scripts": {
+        "test": "time cucumber-js",
+        "test-p": "time cucumber-js --parallel 4",
+        "lint": "eslint --ignore-path .gitignore ."
+    },
+    "dependencies": {
+        "aws-sdk": "^2.550.0",
+        "chai": "^4.2.0",
+        "cucumber": "^5.1.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.16.0",
+        "eslint-plugin-import": "^2.17.2",
+        "eslint-plugin-json": "^1.4.0"
+    },
+    "engines": {
+        "node": "8.10.0"
+    }
+}
