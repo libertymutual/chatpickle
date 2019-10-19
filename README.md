@@ -1,19 +1,20 @@
 # Chat Pickle
 
-## A Cucumber Pattern for testing full Lex Conversation Flows
+## A Cucumber pattern for testing conversational flows against AWS Lex
 
-Describe conversation flows using Gherkin syntax
+Describe conversational flows using Gherkin syntax.
 
-Run those tests against the AWS Lex service
+Run them as tests against the AWS Lex service to verify that those conversations work end to end.
 
 ### Getting Started
 
-#### Setup a Lex Bot
+#### Setup a Lex Chatbot
 This repo is designed to be pointed at the OrderFlowersBot as provided by AWS as a blueprint. To setup your OrderFlowersBot, follow the [AWS Docs Here](https://docs.aws.amazon.com/lex/latest/dg/gs-bp-create-bot.html).
 
 
 #### Setup IAM Credentials
-You will need to create IAM credentials that can invoke your bot. You can use the Amazon managed policies as shown below. You can either use these credentials with the Custom AWS Config steps beflow, or load them in your `.aws` directory. 
+You will need to create IAM credentials that can invoke your bot. You can use the Amazon managed policies as shown below. You can either use these credentials with the Custom AWS Config steps below, or load them in your `.aws` directory.
+
 ![Lex Execution IAM Credentials](https://miro.medium.com/max/750/0*m55m6A95OcpcFRDa.png)
 
 
