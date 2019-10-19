@@ -14,11 +14,14 @@ const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
 
 setDefaultTimeout(CUCUMBER_STEPS_TIMEOUT_MILLISECONDS);
 
-const lexruntime = new AWS.LexRuntime({
-    accessKeyId: 'foo',
-    region: 'us-east-1',
-    secretAccessKey: 'bar'
+AWS.config.update({
+    // eslint-disable-next-line capitalized-comments
+    // accessKeyId: 'foo',
+    // secretAccessKey: 'bar',
+    region: 'us-east-1'
 });
+
+const lexruntime = new AWS.LexRuntime();
 
 /**
  * Make a copy of JSON-ifiable data

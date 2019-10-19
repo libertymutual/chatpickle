@@ -18,12 +18,12 @@ You will need to create IAM credentials that can invoke your bot. You can use th
 
 
 #### Custom AWS Config
-The following code in `main_steps.js` will allow you to use custom AWS config settings
+The following code in `main_steps.js` will allow you to use custom AWS config settings. Currently region is set, but accessKey and secretKey are commented out.
 ```
-const lexruntime = new AWS.LexRuntime({
-    accessKeyId: YOUR_KEY_HERE,
-    region: YOUR_REGION_HERE,
-    secretAccessKey: YOUR_SECRET_HERE
+AWS.config.update({
+    accessKeyId: 'foo',
+    secretAccessKey: 'bar',
+    region: 'us-east-1'
 });
 ```
 
