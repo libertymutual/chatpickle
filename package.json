@@ -14,6 +14,10 @@
     ],
     "author": "Aaron Arsenault",
     "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": "git://https://github.com/libertymutual/chatpickle"
+    },
     "scripts": {
         "test": "time cucumber-js",
         "test-p": "time cucumber-js --parallel 4",
