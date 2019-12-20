@@ -1,5 +1,3 @@
-/* eslint-disable no-invalid-this */
-/* eslint-disable new-cap */
 const {
   Before
 } = require('cucumber');
