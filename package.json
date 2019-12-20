@@ -15,8 +15,8 @@
     "author": "Aaron Arsenault",
     "license": "UNLICENSED",
     "scripts": {
-        "test": "time cucumber-js",
-        "test-p": "time cucumber-js --parallel 4",
+        "test": "cucumber-js",
+        "test-p": "cucumber-js --parallel 4",
         "lint": "semistandard",
         "lint-fix": "semistandard --fix"
     },
