@@ -1,5 +1,3 @@
-/* eslint-disable no-invalid-this */
-/* eslint-disable new-cap */
 const {
   Given, Then, When, setDefaultTimeout
 } = require('cucumber');
@@ -15,7 +13,6 @@ const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
 setDefaultTimeout(CUCUMBER_STEPS_TIMEOUT_MILLISECONDS);
 
 AWS.config.update({
-  // eslint-disable-next-line capitalized-comments
   // accessKeyId: 'foo',
   // secretAccessKey: 'bar',
   region: 'us-east-1'
