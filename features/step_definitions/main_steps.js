@@ -1,5 +1,5 @@
 const {
-  Given, Then, When, setDefaultTimeout
+  Given, When, Then, setDefaultTimeout
 } = require('cucumber');
 const {
   assert

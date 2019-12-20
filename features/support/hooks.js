@@ -6,9 +6,7 @@ Before(function () {
   this.userName = 'Anonymous';
   this.botName = null;
   this.sessionId = null;
-  this.initialSessionAttributes = {
-
-  };
+  this.initialSessionAttributes = {};
   this.sessionAttributes = null;
   this.lexResponse = null;
 });
