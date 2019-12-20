@@ -15,9 +15,10 @@
     "author": "Aaron Arsenault",
     "license": "UNLICENSED",
     "scripts": {
-        "test": "time cucumber-js",
-        "test-p": "time cucumber-js --parallel 4",
-        "lint": "eslint --ignore-path .gitignore ."
+        "test": "cucumber-js",
+        "test-p": "cucumber-js --parallel 4",
+        "lint": "semistandard",
+        "lint-fix": "semistandard --fix"
     },
     "dependencies": {
         "aws-sdk": "^2.550.0",
@@ -25,9 +26,9 @@
         "cucumber": "^5.1.0"
     },
     "devDependencies": {
-        "eslint": "^5.16.0",
-        "eslint-plugin-import": "^2.17.2",
-        "eslint-plugin-json": "^1.4.0"
+        "eslint": "^6.7.2",
+        "eslint-config-standard": "^13.0.1",
+        "semistandard": "^14.2.0"
     },
     "engines": {
         "node": "8.10.0"
