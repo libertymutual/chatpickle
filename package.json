@@ -19,6 +19,7 @@
         "url": "git://https://github.com/libertymutual/chatpickle"
     },
     "scripts": {
+        "build" : "tsc",
         "test": "cucumber-js",
         "test-p": "cucumber-js --parallel 4",
         "lint": "semistandard",
@@ -32,7 +33,8 @@
     "devDependencies": {
         "eslint": "^6.8.0",
         "eslint-config-standard": "^14.1.0",
-        "semistandard": "^14.2.0"
+        "semistandard": "^14.2.0",
+        "typescript": "^3.7.4"
     },
     "engines": {
         "node": "8.10.0"
