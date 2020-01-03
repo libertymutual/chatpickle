@@ -25,13 +25,13 @@
         "lint-fix": "semistandard --fix"
     },
     "dependencies": {
-        "aws-sdk": "^2.550.0",
+        "aws-sdk": "^2.597.0",
         "chai": "^4.2.0",
-        "cucumber": "^5.1.0"
+        "cucumber": "^6.0.5"
     },
     "devDependencies": {
-        "eslint": "^6.7.2",
-        "eslint-config-standard": "^13.0.1",
+        "eslint": "^6.8.0",
+        "eslint-config-standard": "^14.1.0",
         "semistandard": "^14.2.0"
     },
     "engines": {
