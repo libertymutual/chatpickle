@@ -26,7 +26,6 @@
         "lint-fix": "semistandard --fix"
     },
     "dependencies": {
-        "@aws-sdk/client-lex-runtime-service-node": "0.1.0-preview.2",
         "aws-sdk": "^2.597.0",
         "chai": "^4.2.0",
         "cucumber": "^6.0.5"
