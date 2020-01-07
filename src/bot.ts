@@ -1,6 +1,7 @@
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 
 export class Bot {
+
     private botName: string;
     private botAlias: string;
     private userId: string;
@@ -28,7 +29,7 @@ export class Bot {
                 inputText,
                 sessionAttributes: this.sessionAttributes
             };
-            
+
             console.log(`[${this.userId}] User: ${inputText}`);
 
             const response = await this.lex.postText(params).promise();
@@ -41,4 +42,5 @@ export class Bot {
             throw e;
         }
     }
+    
 }
