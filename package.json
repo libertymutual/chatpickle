@@ -19,18 +19,20 @@
         "url": "git://https://github.com/libertymutual/chatpickle"
     },
     "scripts": {
-        "build" : "tsc",
+        "build": "tsc",
         "test": "cucumber-js",
         "test-p": "cucumber-js --parallel 4",
         "lint": "semistandard",
         "lint-fix": "semistandard --fix"
     },
     "dependencies": {
+        "@aws-sdk/client-lex-runtime-service-node": "0.1.0-preview.2",
         "aws-sdk": "^2.597.0",
         "chai": "^4.2.0",
         "cucumber": "^6.0.5"
     },
     "devDependencies": {
+        "@types/node": "^13.1.4",
         "eslint": "^6.8.0",
         "eslint-config-standard": "^14.1.0",
         "semistandard": "^14.2.0",

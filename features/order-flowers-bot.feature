@@ -2,7 +2,6 @@ Feature: OrderFlowers Bot
 
     Scenario: Anonymous orders roses for tomorrow at 4pm
         Given the user begins a new chat with "OrderFlowers_bot"
-        When they say:
         * User: I want to order flowers
         * Bot:  What type of flowers you want?
         * User: roses
