@@ -1,0 +1,16 @@
+{
+    "bots": {
+        "OrderFlowers": {
+            "name": "OrderFlowers",
+            "alias": "prod",
+            "region": "us-east-1"
+        }
+    },
+    "users": {
+        "homer": {
+            "firstName": "Homer",
+            "lastName": "Simpson",
+            "address": "Springfield"
+        }
+    }
+}
