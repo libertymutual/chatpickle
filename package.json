@@ -19,9 +19,11 @@
         "url": "git://https://github.com/libertymutual/chatpickle"
     },
     "scripts": {
-        "build": "tsc",
-        "test": "cucumber-js",
-        "test-p": "cucumber-js --parallel 4",
+        "build": "rm -rf dist/* && npm run build:typescript && npm run build:other",
+        "build:typescript": "tsc",
+        "build:other": "cp -r cucumberSupport dist/cucumberSupport",
+        "start": "npm run build && CHATPICKLE_CONSUMER_PATH='examples/parentProject/' node dist/index.js",
+        "test": "echo 'TODO - Add Unit Tests to Project'",
         "lint": "semistandard",
         "lint-fix": "semistandard --fix"
     },

@@ -1,7 +1,7 @@
 const { Before, Given, When, Then, setDefaultTimeout } = require('cucumber');
 const { assert } = require('chai');
-const { BotClient } = require('../../lib/botClient.js');
-const CHATPICKLE_CONFIG = require('./chatpickle.config.json');
+const { BotClient } = require('../lib/botClients/botClient.js');
+const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config.json`);
   
 const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
 
