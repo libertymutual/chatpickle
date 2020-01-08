@@ -1,6 +1,6 @@
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 
-export class Bot {
+export class BotClient {
 
     private botName: string;
     private botAlias: string;
@@ -42,5 +42,5 @@ export class Bot {
             throw e;
         }
     }
-    
+
 }
