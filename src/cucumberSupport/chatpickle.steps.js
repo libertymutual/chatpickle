@@ -11,6 +11,7 @@ Before(function () {
     this.userName = 'Anonymous';
     this.userAttributes = {};
     this.botClient = null;
+    this.botReply = null;
 });
   
 Given('the user is {string}', function (userName) {
@@ -26,14 +27,14 @@ Given('the user begins a new chat with {string}', function (botName) {
 });
   
 When(/User:\s*([^\n\r]*)/i, async function (inputText) {
-    await this.botClient.send(inputText);
+    this.botReply = await this.botClient.speak(inputText);
 });
   
 Then(/Bot:\s*([^\n\r]*)/i, function (botMessage) {
-    assert.equal(this.botClient.reply, botMessage);
+    assert.equal(this.botReply, botMessage);
 });
   
 Then(/BotRegEx:\s*([^\n\r]*)/i, function (botMessage) {
-    assert.match(this.botClient.reply, new RegExp(botMessage, 'i'));
+    assert.match(this.botReply, new RegExp(botMessage, 'i'));
 });
   

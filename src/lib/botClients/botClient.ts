@@ -7,7 +7,6 @@ export class BotClient {
     private userId: string;
     private sessionAttributes: any;
     private lex: LexRuntime;
-    public reply: string;
 
     constructor(botName: string, botAlias: string, region: string, userId: string, userAttributes: any) {
         this.botName = botName;
@@ -18,10 +17,8 @@ export class BotClient {
         console.log(`[${this.userId}] New Conversation with ${this.botName}`);
     }
 
-    public async send(inputText: string): Promise<void> {
+    public async speak(inputText: string): Promise<string> {
         try {
-            this.reply = null;
-
             const params = {
                 botName: this.botName,
                 botAlias: this.botAlias,
@@ -34,10 +31,12 @@ export class BotClient {
 
             const response = await this.lex.postText(params).promise();
 
+            const reply: string = response.message.trim();
             this.sessionAttributes = response.sessionAttributes;
-            this.reply = response.message.trim();
 
-            console.log(`[${this.userId}] Bot: ${this.reply}`);
+            console.log(`[${this.userId}] Bot: ${reply}`);
+
+            return reply;
         } catch (e) {
             throw e;
         }
