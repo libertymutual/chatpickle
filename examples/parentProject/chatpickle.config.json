@@ -1,8 +1,8 @@
 {
     "bots": {
         "OrderFlowers": {
-            "name": "OrderFlowers",
-            "alias": "prod",
+            "botName": "OrderFlowers",
+            "botAlias": "prod",
             "region": "us-east-1"
         }
     },
