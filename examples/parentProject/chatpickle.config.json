@@ -1,16 +1,25 @@
 {
     "bots": {
         "OrderFlowers": {
-            "botName": "OrderFlowers",
-            "botAlias": "prod",
-            "region": "us-east-1"
+            "type": "Lex",
+            "context": {
+                "botName": "OrderFlowers",
+                "botAlias": "prod",
+                "region": "us-east-1"
+            }
         }
     },
     "users": {
         "homer": {
-            "firstName": "Homer",
-            "lastName": "Simpson",
-            "address": "Springfield"
+            "description": "Basic User Profile",
+            "context": {
+                "userId": "homer",
+                "userAttributes": {
+                    "firstName": "Homer",
+                    "lastName": "Simpson",
+                    "address": "Springfield"
+                }
+            }
         }
     }
 }

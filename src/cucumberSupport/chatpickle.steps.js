@@ -1,33 +1,38 @@
 const { Before, Given, When, Then, setDefaultTimeout } = require('cucumber');
 const { assert } = require('chai');
-const { LexClient } = require('../lib/botClients/LexClient.js');
 const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config.json`);
   
 const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
-
 setDefaultTimeout(CUCUMBER_STEPS_TIMEOUT_MILLISECONDS);
   
 Before(function () {
-    this.userName = 'Anonymous';
-    this.userAttributes = {};
+    this.userContext = {userId: 'Anonymous'};
     this.botClient = null;
     this.botReply = null;
 });
   
 Given('the user is {string}', function (userName) {
-    this.userName = userName;
-    this.userAttributes = CHATPICKLE_CONFIG.users[userName];
-    assert.ok(this.userAttributes, `Missing config for user name ${userName} - add them to chatpickle.config.users`);
+    const userConfig = CHATPICKLE_CONFIG.users[userName];
+
+    // TODO - implement config validations that are elegant
+    assert.ok(userConfig, `Missing config for users.${userName}`);
+    assert.ok(userConfig.context, `Missing config for users.${userName}.context`);
+    assert.ok(userConfig.context.userId, `Missing config for users.${userName}.context.userId`);
+    assert.ok(userConfig.context.userAttributes, `Missing config for users.${userName}.context.userAttributes`);
+
+    this.userContext = userConfig.context;
 });
   
 Given('the user begins a new chat with {string}', function (botName) {
     const botConfig = CHATPICKLE_CONFIG.bots[botName];
-    assert.ok(botConfig, `Missing config for bot name ${botName} - add it to chatpickle.config.bots`);
-    const userConfig = {
-        userName: this.userName,
-        userAttributes: this.userAttributes
-    };
-    this.botClient = new LexClient(botConfig, userConfig);
+
+    // TODO - implement config validations that are elegant
+    assert.ok(botConfig, `Missing config for bots.${botName}`);
+    assert.ok(botConfig.type, `Missing config for bots.${botName}.type`);
+    assert.ok(botConfig.context, `Missing config for bots.${botName}.context`);
+
+    const BotSubclass = require(`../lib/botClients/${botConfig.type}Client.js`).default;
+    this.botClient = new BotSubclass(botConfig.context, this.userContext);
 });
   
 When(/User:\s*([^\n\r]*)/i, async function (inputText) {
