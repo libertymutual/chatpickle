@@ -21,7 +21,7 @@
     "scripts": {
         "build": "rm -rf dist/* && npm run build:typescript && npm run build:other",
         "build:typescript": "tsc",
-        "build:other": "cp -r cucumberSupport dist/cucumberSupport",
+        "build:other": "cp -r src/cucumberSupport dist/cucumberSupport",
         "start": "npm run build && CHATPICKLE_CONSUMER_PATH='examples/parentProject/' node dist/index.js",
         "test": "echo 'TODO - Add Unit Tests to Project'",
         "lint": "semistandard",
