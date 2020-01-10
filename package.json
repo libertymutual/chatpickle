@@ -23,7 +23,7 @@
         "build:typescript": "tsc",
         "build:other": "cp -r src/cucumberSupport dist/cucumberSupport",
         "start": "npm run build && CHATPICKLE_CONSUMER_PATH='examples/parentProject/' node dist/index.js",
-        "test": "echo 'TODO - Add Unit Tests to Project'",
+        "test": "jest",
         "lint": "eslint \"{scripts,src,test}/**/*.{js,ts}\"",
         "lint:fix": "eslint --fix \"{scripts,src,test}/**/*.{js,ts}\""
     },
@@ -33,13 +33,16 @@
         "cucumber": "^6.0.5"
     },
     "devDependencies": {
+        "@types/jest": "^24.0.25",
         "@types/node": "^13.1.4",
         "@typescript-eslint/eslint-plugin": "^2.15.0",
         "@typescript-eslint/parser": "^2.15.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.9.0",
         "eslint-plugin-prettier": "^3.1.2",
+        "jest": "^24.9.0",
         "prettier": "^1.19.1",
+        "ts-jest": "^24.3.0",
         "typescript": "^3.7.4"
     },
     "engines": {
