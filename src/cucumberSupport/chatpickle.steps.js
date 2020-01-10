@@ -12,6 +12,7 @@ Before(function () {
 });
   
 Given('the user is {string}', function (userName) {
+    assert.ok(CHATPICKLE_CONFIG.users, `Missing chatpickle.config.json attribute users`);
     const userConfig = CHATPICKLE_CONFIG.users[userName];
 
     // TODO - implement config validations that are elegant
@@ -24,6 +25,7 @@ Given('the user is {string}', function (userName) {
 });
   
 Given('the user begins a new chat with {string}', function (botName) {
+    assert.ok(CHATPICKLE_CONFIG.bots, `Missing chatpickle.config.json attribute bots`);
     const botConfig = CHATPICKLE_CONFIG.bots[botName];
 
     // TODO - implement config validations that are elegant
