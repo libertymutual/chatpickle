@@ -1,5 +1,4 @@
 export abstract class BotClient {
-
     botContext: any;
     userContext: any;
 
@@ -9,5 +8,4 @@ export abstract class BotClient {
     }
 
     public abstract async speak(inputText: string): Promise<string>;
-
 }

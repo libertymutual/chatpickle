@@ -1,17 +1,18 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { Before, Given, When, Then, setDefaultTimeout } = require('cucumber');
 const { assert } = require('chai');
 const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config.json`);
-  
+
 const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
 setDefaultTimeout(CUCUMBER_STEPS_TIMEOUT_MILLISECONDS);
-  
-Before(function () {
-    this.userContext = {userId: 'Anonymous'};
+
+Before(function() {
+    this.userContext = { userId: 'Anonymous' };
     this.botClient = null;
     this.botReply = null;
 });
-  
-Given('the user is {string}', function (userName) {
+
+Given('the user is {string}', function(userName) {
     assert.ok(CHATPICKLE_CONFIG.users, `Missing chatpickle.config.json attribute users`);
     const userConfig = CHATPICKLE_CONFIG.users[userName];
 
@@ -23,8 +24,8 @@ Given('the user is {string}', function (userName) {
 
     this.userContext = userConfig.context;
 });
-  
-Given('the user begins a new chat with {string}', function (botName) {
+
+Given('the user begins a new chat with {string}', function(botName) {
     assert.ok(CHATPICKLE_CONFIG.bots, `Missing chatpickle.config.json attribute bots`);
     const botConfig = CHATPICKLE_CONFIG.bots[botName];
 
@@ -36,16 +37,15 @@ Given('the user begins a new chat with {string}', function (botName) {
     const BotSubclass = require(`../lib/botClients/${botConfig.type}Client.js`).default;
     this.botClient = new BotSubclass(botConfig.context, this.userContext);
 });
-  
-When(/User:\s*([^\n\r]*)/i, async function (inputText) {
+
+When(/User:\s*([^\n\r]*)/i, async function(inputText) {
     this.botReply = await this.botClient.speak(inputText);
 });
-  
-Then(/Bot:\s*([^\n\r]*)/i, function (botMessage) {
+
+Then(/Bot:\s*([^\n\r]*)/i, function(botMessage) {
     assert.equal(this.botReply, botMessage);
 });
-  
-Then(/BotRegEx:\s*([^\n\r]*)/i, function (botMessage) {
+
+Then(/BotRegEx:\s*([^\n\r]*)/i, function(botMessage) {
     assert.match(this.botReply, new RegExp(botMessage, 'i'));
 });
-  

@@ -1,8 +1,7 @@
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 import { BotClient } from './botClient';
 
-export default class LexClient extends BotClient{
-
+export default class LexClient extends BotClient {
     private botName: string;
     private botAlias: string;
     private userId: string;
@@ -15,7 +14,7 @@ export default class LexClient extends BotClient{
         this.botAlias = this.botContext.botAlias;
         this.userId = `${this.userContext.userId}-${Date.now()}`;
         this.sessionAttributes = this.userContext.userAttributes;
-        this.lex = new LexRuntime({region: this.botContext.region});
+        this.lex = new LexRuntime({ region: this.botContext.region });
         console.log(`[${this.userId}] New Conversation with ${this.botName}`);
     }
 
@@ -26,7 +25,7 @@ export default class LexClient extends BotClient{
                 botAlias: this.botAlias,
                 userId: this.userId,
                 inputText,
-                sessionAttributes: this.sessionAttributes
+                sessionAttributes: this.sessionAttributes,
             };
 
             console.log(`[${this.userId}] User: ${inputText}`);
@@ -43,5 +42,4 @@ export default class LexClient extends BotClient{
             throw e;
         }
     }
-
 }
