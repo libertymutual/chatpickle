@@ -7,7 +7,7 @@
 * Supported chatbot service integrations:
   * AWS Lex
 
-### Installing Chat Pickle
+### Installing Chatpickle
 `npm install chatpickle --save-dev`
 
 ### Create a chatpickle configuration json and chatpickle folder
