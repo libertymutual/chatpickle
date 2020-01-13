@@ -2,10 +2,8 @@
 
 ## Conversation Tests for Chatbots
 
-Describe conversational flows using Gherkin syntax.
-Run them as tests against your deployed chatbot.
-
-~ *Chatpickle is a superset of cucumber-js.*
+* Describe conversational flows using Gherkin syntax.
+* Run them as tests against your deployed chatbot.
 
 ##### Supported chatbot service integrations:
 
