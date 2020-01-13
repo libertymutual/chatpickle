@@ -4,12 +4,8 @@
 
 * Describe conversational flows using Gherkin syntax.
 * Run them as tests against your deployed chatbot.
-
-##### Supported chatbot service integrations:
-
-1. AWS Lex
-
-### Getting Started
+* Supported chatbot service integrations:
+  * AWS Lex
 
 #### Installing Chat Pickle
 `npm install chatpickle --save-dev`
