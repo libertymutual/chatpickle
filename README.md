@@ -31,7 +31,7 @@ You will need to create IAM credentials that can invoke your bot. You can use th
 ### Running Chatpickle
 From your project root, or added as a script to your package.json:
 
-`node node_modules/chatpickle/dist/index.js`
+`chatpickle`
 
 ### Extending Chatpickle
 This release of Chatpickle was focussed around the AWS Lex service.  You can help extend chatpickle by contributing to our open source project [https://github.com/libertymutual/chatpickle](https://github.com/libertymutual/chatpickle) and by adding more bot clients to [src/lib/botClients](src/lib/botClients).
