@@ -1,9 +1,8 @@
 // Need to bypass type safety of typescript to allow this approach for mocking to work.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const LexRuntime = require('aws-sdk/clients/lexruntime');
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const LexClient = require('./LexClient').default;
-console.log(LexClient.toString());
+import LexClient from './LexClient';
+console.log(process.env);
 
 jest.mock('aws-sdk/clients/lexruntime');
 
