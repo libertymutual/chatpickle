@@ -1,8 +1,9 @@
+console.log(`process.env =\n${JSON.stringify(process.env, null, 2)}`);
+
 // Need to bypass type safety of typescript to allow this approach for mocking to work.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const LexRuntime = require('aws-sdk/clients/lexruntime');
 import LexClient from './LexClient';
-console.log(process.env);
 
 jest.mock('aws-sdk/clients/lexruntime');
 
