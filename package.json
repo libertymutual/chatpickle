@@ -54,5 +54,10 @@
     },
     "engines": {
         "node": "^10.15.0"
+    },
+    "jest": {
+        "modulePaths": [
+            "<rootDir>/src/"
+        ]
     }
 }
