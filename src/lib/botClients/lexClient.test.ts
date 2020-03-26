@@ -1,4 +1,10 @@
-console.log(`process.env =\n${JSON.stringify(process.env, null, 2)}`);
+console.log('Sorted ENV');
+console.log(
+    Object.keys(process.env)
+        .map(key => `${key}=${process.env[key]}`)
+        .sort()
+        .join('\n'),
+);
 
 // Need to bypass type safety of typescript to allow this approach for mocking to work.
 // eslint-disable-next-line @typescript-eslint/no-var-requires
