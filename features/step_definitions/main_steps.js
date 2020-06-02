@@ -50,6 +50,10 @@ Given('the user begins a new chat with {string}', function (botNickName) {
       this.botName = 'OrderFlowers';
       this.botAlias = 'prod';
       break;
+    case 'ScheduleAppointment_bot':
+      this.botName = 'ScheduleAppointment';
+      this.botAlias = 'prod';
+      break;
     default:
       assert.fail(`Unexpected bot name ${botNickName}`);
   }
