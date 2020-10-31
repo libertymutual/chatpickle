@@ -19,27 +19,27 @@ export default class LexClient extends BotClient {
     }
 
     public async speak(inputText: string): Promise<string> {
-        try {
-            const params = {
-                botName: this.botName,
-                botAlias: this.botAlias,
-                userId: this.userId,
-                inputText,
-                sessionAttributes: this.sessionAttributes,
-            };
+        const params = {
+            botName: this.botName,
+            botAlias: this.botAlias,
+            userId: this.userId,
+            inputText,
+            sessionAttributes: this.sessionAttributes,
+        };
 
-            console.log(`[${this.userId}] User: ${inputText}`);
+        console.log(`[${this.userId}] User: ${inputText}`);
 
-            const response = await this.lex.postText(params).promise();
+        const response = await this.lex.postText(params).promise();
 
-            const reply: string = response.message.trim();
-            this.sessionAttributes = response.sessionAttributes;
+        const reply: string = response.message.trim();
+        this.sessionAttributes = response.sessionAttributes;
 
-            console.log(`[${this.userId}] Bot: ${reply}`);
+        console.log(`[${this.userId}] Bot: ${reply}`);
 
-            return reply;
-        } catch (e) {
-            throw e;
-        }
+        return reply;
+    }
+
+    public async fetch(attribute: string): Promise<string> {
+        return this.sessionAttributes[attribute];
     }
 }
