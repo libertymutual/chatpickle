@@ -37,7 +37,8 @@
     "dependencies": {
         "aws-sdk": "^2.597.0",
         "chai": "^4.2.0",
-        "cucumber": "^6.0.5"
+        "cucumber": "^6.0.5",
+        "regex-parser": "^2.2.11"
     },
     "devDependencies": {
         "@types/jest": "^24.0.25",

@@ -43,7 +43,13 @@ When(/User:\s*([^\n\r]*)/i, async function(inputText) {
 });
 
 Then(/Bot:\s*([^\n\r]*)/i, function(botMessage) {
+    if (botMessage[0] === '/') {
+        // It's a regular expression, use match.
+        assert.match(this.botReply, regexParser(botMessage));
+    } else {
+        // It's a string, use strict equality.
     assert.equal(this.botReply, botMessage);
+    }
 });
 
 Then(/BotRegEx:\s*([^\n\r]*)/i, function(botMessage) {
