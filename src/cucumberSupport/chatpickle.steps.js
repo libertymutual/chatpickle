@@ -2,7 +2,7 @@
 const { Before, Given, When, Then, setDefaultTimeout } = require('cucumber');
 const { assert } = require('chai');
 const regexParser = require("regex-parser");
-const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config.json`);
+const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config`);
 
 const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
 setDefaultTimeout(CUCUMBER_STEPS_TIMEOUT_MILLISECONDS);
