@@ -10,3 +10,5 @@ Feature: OrderFlowers Bot
         * Bot:  /^Pick up the roses at what time on \d{4}-\d{2}-\d{2}\?$/
         * User: four pm
         * Bot:  /^Okay, your roses will be ready for pickup by 16:00 on \d{4}-\d{2}-\d{2}.  Does this sound okay\?$/
+        Then slots.FlowerType is roses
+        And sessionAttributes.FlowerType is undefined

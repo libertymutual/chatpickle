@@ -53,7 +53,12 @@ Then(/Bot:\s*([^\n\r]*)/i, function(botMessage) {
     }
 });
 
-Then('{string} is {string}', async function(attributePath, requiredValue) {
+Then(/["']?([^"']+)["']?\s+(?:=|==|===|is|equals|is equal to|contains)\s+["']?([^"']*)["']?/i,
+    async function(attributePath, requiredValue) {
     const value = await this.botClient.fetch(attributePath);
-    assert.equal(value, requiredValue);
+    if (value === undefined) {
+        assert.equal('undefined', requiredValue);
+    } else {
+        assert.equal(value.toString(), requiredValue);
+    }
 });
