@@ -1,6 +1,6 @@
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 import get from 'lodash.get';
-import { BotClient } from './botClient';
+import { BotClient } from './BotClient';
 
 export default class LexClient extends BotClient {
     private botName: string;
