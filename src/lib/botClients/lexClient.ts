@@ -40,6 +40,6 @@ export default class LexClient extends BotClient {
     }
 
     public async fetch(attribute: string): Promise<string> {
-        return this.sessionAttributes[attribute];
+        return await this.sessionAttributes[attribute];
     }
 }
