@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { Before, Given, When, Then, setDefaultTimeout } = require('cucumber');
 const { assert } = require('chai');
+const regexParser = require("regex-parser");
 const CHATPICKLE_CONFIG = require(`${process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE}/chatpickle.config.json`);
 
 const CUCUMBER_STEPS_TIMEOUT_MILLISECONDS = 30000;
@@ -48,10 +49,11 @@ Then(/Bot:\s*([^\n\r]*)/i, function(botMessage) {
         assert.match(this.botReply, regexParser(botMessage));
     } else {
         // It's a string, use strict equality.
-    assert.equal(this.botReply, botMessage);
+        assert.equal(this.botReply, botMessage);
     }
 });
 
-Then(/BotRegEx:\s*([^\n\r]*)/i, function(botMessage) {
-    assert.match(this.botReply, new RegExp(botMessage, 'i'));
+Then('{string} is {string}', async function(attributePath, requiredValue) {
+    const value = await this.botClient.fetch(attributePath);
+    assert.equal(value, requiredValue);
 });
