@@ -8,4 +8,6 @@ export abstract class BotClient {
     }
 
     public abstract async speak(inputText: string): Promise<string>;
+
+    public abstract async fetch(attribute: string): Promise<string>;
 }
