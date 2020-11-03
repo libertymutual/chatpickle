@@ -2,7 +2,14 @@
 
 import { Cli } from 'cucumber';
 
-const consumerPathArg = process.argv[2];
+let consumerPathArg;
+let passthruArgs;
+if (process.argv[2] === '--cpPath') {
+    consumerPathArg = process.argv[3];
+    passthruArgs = process.argv.slice(4);
+} else {
+    passthruArgs = process.argv.slice(2);
+} 
 
 process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE = consumerPathArg
     ? `${process.cwd()}/${consumerPathArg}`
@@ -14,6 +21,7 @@ const runArgs = [
     `${consumerPathArg || ''}chatpickle`,
     '--require',
     `${__dirname}/cucumberSupport`,
+    ...passthruArgs
 ];
 const cliArgs = { argv: runArgs, cwd: process.cwd(), stdout: process.stdout };
 const cli = new Cli(cliArgs);
