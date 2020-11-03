@@ -57,7 +57,7 @@ Then(/Bot:\s*([^\n\r]*)/i, function(botMessage) {
     }
 });
 
-Then(/["']?([^"']+)["']?\s+(?:=|==|===|is|equals|is equal to|contains)\s+["']?([^"']*)["']?/i,
+Then(/["']?([^"']+)["']?\s+(?:=|==|===|equals|is equal to|contains)\s+["']?([^"']*)["']?/i,
     async function(attributePath, requiredValue) {
     const value = await this.botClient.fetch(attributePath);
     if (value === undefined) {
