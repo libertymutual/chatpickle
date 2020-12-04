@@ -8,6 +8,7 @@ export default class LexClient extends BotClient {
     private userId: string;
     private lastResponse: any;
     private sessionAttributes: any;
+    private props: any;
     private lex: LexRuntime;
 
     constructor(botContext: any, userContext: any) {
@@ -17,7 +18,15 @@ export default class LexClient extends BotClient {
         this.userId = `${this.userContext.userId}-${Date.now()}`;
         this.lastResponse = null;
         this.sessionAttributes = this.userContext.userAttributes;
-        this.lex = new LexRuntime({ region: this.botContext.region });
+
+        this.props = {
+            region: this.botContext.region,
+        };
+        // Optional Auth Environment Variables
+        this.props.accessKeyId = process.env.chatpickle_access_id || undefined;
+        this.props.secretAccessKey = process.env.chatpickle_access_secret || undefined;
+
+        this.lex = new LexRuntime(this.props);
         console.log(`[${this.userId}] New Conversation with ${this.botName}`);
     }
 
