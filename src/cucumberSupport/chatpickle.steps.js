@@ -25,7 +25,7 @@ Given('the user is {string}', function(userName) {
     this.userContext = userConfig.context;
 });
 
-Given('the user begins a new chat with {string}', function(botName) {
+Given('the user begins a new chat with {string}', async function(botName) {
     assert.ok(CHATPICKLE_CONFIG.bots, `Missing chatpickle.config.json attribute bots`);
     const botConfig = CHATPICKLE_CONFIG.bots[botName];
 
@@ -40,7 +40,10 @@ Given('the user begins a new chat with {string}', function(botName) {
     } else {
         BotSubclass = require(`../lib/botClients/${botConfig.type}Client`).default;
     }
+
     this.botClient = new BotSubclass(botConfig.context, this.userContext);
+
+    await this.botClient.initialize();
 });
 
 When(/User:\s*([^\n\r]*)/i, async function(inputText) {
