@@ -26,4 +26,15 @@ const runArgs = [
 const cliArgs = { argv: runArgs, cwd: process.cwd(), stdout: process.stdout };
 const cli = new Cli(cliArgs);
 
-cli.run();
+cli.run()
+    .then(result => {
+        if (result.success) {
+            process.exit(0);
+        } else {
+            process.exit(1);
+        }
+    })
+    .catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
