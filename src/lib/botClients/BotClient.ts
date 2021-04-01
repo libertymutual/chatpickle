@@ -14,7 +14,7 @@ export abstract class BotClient {
         return;
     }
 
-    public abstract async speak(inputText: string): Promise<string>;
+    public abstract speak(inputText: string): Promise<string>;
 
-    public abstract async fetch(attribute: string): Promise<string>;
+    public abstract fetch(attribute: string): Promise<string>;
 }
