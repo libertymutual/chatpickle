@@ -7,6 +7,14 @@
                 "botAlias": "prod",
                 "region": "us-east-1"
             }
+        },
+        "ScheduleAppointment": {
+            "type": "Lex",
+            "context": {
+                "botName": "ScheduleAppointment",
+                "botAlias": "prod",
+                "region": "us-east-1"
+            }
         }
     },
     "users": {
