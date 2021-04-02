@@ -1,6 +1,7 @@
 # Release Notes
 
-## v.next
+## v2.0.1
+* Cleanup elements that can be viewed from the npmjs chatpickle page
 
 ## v2.0.0
 * Initial public NPM release
