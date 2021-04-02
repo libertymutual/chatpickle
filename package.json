@@ -1,7 +1,7 @@
 {
-    "name": "chatpickle-cucumber-examples",
-    "version": "1.0.0",
-    "description": "Cucumber Implementation of Chat Pickle (Lex Conversational Flow Tests)",
+    "name": "chatpickle",
+    "version": "2.0.0",
+    "description": "Conversation Tests for Chatbots",
     "keywords": [
         "BDD",
         "Chatbot",
@@ -13,28 +13,53 @@
         "Lex"
     ],
     "author": "Aaron Arsenault",
-    "license": "UNLICENSED",
+    "license": "Apache-2.0",
     "repository": {
         "type": "git",
         "url": "git://https://github.com/libertymutual/chatpickle"
     },
+    "files": [
+        "dist"
+    ],
+    "bin": {
+        "chatpickle": "dist/cli.js"
+    },
     "scripts": {
-        "test": "cucumber-js",
-        "test-p": "cucumber-js --parallel 4",
-        "lint": "semistandard",
-        "lint-fix": "semistandard --fix"
+        "build": "rm -rf dist/* && npm run build:typescript && npm run build:other",
+        "build:typescript": "tsc && chmod +x dist/cli.js",
+        "build:other": "cp -r src/cucumberSupport dist/cucumberSupport",
+        "start": "npm run build && node dist/cli.js --cpPath examples/parentProject/",
+        "test": "jest --reporters=default --reporters=jest-junit",
+        "lint": "eslint \"{scripts,src,test}/**/*.{js,ts}\"",
+        "lint:fix": "eslint --fix \"{scripts,src,test}/**/*.{js,ts}\"",
+        "prepublish": "npm run build"
     },
     "dependencies": {
-        "aws-sdk": "^2.550.0",
-        "chai": "^4.2.0",
-        "cucumber": "^5.1.0"
+        "aws-sdk": "^2.878.0",
+        "chai": "^4.3.4",
+        "cucumber": "^6.0.5",
+        "lodash.get": "^4.4.2",
+        "regex-parser": "^2.2.11"
     },
     "devDependencies": {
-        "eslint": "^6.7.2",
-        "eslint-config-standard": "^13.0.1",
-        "semistandard": "^14.2.0"
+        "@types/jest": "^26.0.22",
+        "@types/node": "^14.14.37",
+        "@typescript-eslint/eslint-plugin": "^4.20.0",
+        "@typescript-eslint/parser": "^4.20.0",
+        "eslint": "^7.23.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-prettier": "^3.3.1",
+        "jest": "^26.6.3",
+        "jest-junit": "^12.0.0",
+        "prettier": "^2.2.1",
+        "ts-jest": "^26.5.4",
+        "typescript": "^4.2.3"
     },
     "engines": {
-        "node": "8.10.0"
+        "node": "^12.13.0"
+    },
+    "jest-junit": {
+        "outputDirectory": "reports",
+        "outputName": "jest-junit.xml"
     }
 }
