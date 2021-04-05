@@ -13,7 +13,7 @@
 ### Create a chatpickle configuration json and chatpickle folder
 The following sample project, [examples/parentProject](https://github.com/libertymutual/chatpickle/tree/master/examples/parentProject), is designed to be pointed at the OrderFlowersBot as provided by AWS as a blueprint.
 
-You need a [chatpickle.config.json](https://github.com/libertymutual/chatpickle/tree/master/examples/parentProject/chatpickle.config.json) in the root of your node.js project and it should be formatted like the example provide.
+You need a [chatpickle.config.json](https://github.com/libertymutual/chatpickle/tree/master/examples/parentProject/chatpickle.config.json) in the root of your node.js project and it should be formatted like the example provided.
 
 You also need a [chatpickle/](https://github.com/libertymutual/chatpickle/tree/master/examples/parentProject/chatpickle) folder in the root of your project.  This is where you will put your gherkin feature files which can leverage the extended chatpickle syntax.
 
