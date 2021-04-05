@@ -1,5 +1,8 @@
 # Chatpickle Release Notes
 
+## v2.0.3
+Fix prepublish build
+
 ## v2.0.2
 Github Workflows for CI/CD
 * Two new automation workflows:
