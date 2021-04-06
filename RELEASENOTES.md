@@ -1,5 +1,11 @@
 # Chatpickle Release Notes
 
+## v2.0.5
+Fix for automated publish
+
+## v2.0.4
+Manual publish to mitigate downloads of broken package.  No code changes.
+
 ## v2.0.3
 Fix prepublish build
 
