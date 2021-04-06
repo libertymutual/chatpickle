@@ -1,5 +1,8 @@
 # Chatpickle Release Notes
 
+## v2.0.6
+Update Dependencies
+
 ## v2.0.5
 Fix for automated publish
 
