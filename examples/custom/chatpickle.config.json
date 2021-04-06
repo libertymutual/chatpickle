@@ -1,0 +1,24 @@
+{
+    "bots": {
+        "RestaurantGreeter": {
+            "type": "custom",
+            "location": "chatpickle/support/customBotClient.js",
+            "context": {
+                "botName": "Restaurant Greeter"
+            }
+        }
+    },
+    "users": {
+        "homer": {
+            "description": "Basic User Profile",
+            "context": {
+                "userId": "homer",
+                "userAttributes": {
+                    "firstName": "Homer",
+                    "lastName": "Simpson",
+                    "address": "Springfield"
+                }
+            }
+        }
+    }
+}
