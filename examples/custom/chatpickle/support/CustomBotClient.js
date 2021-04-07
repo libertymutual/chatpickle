@@ -1,39 +1,38 @@
+const { SimpleBot } = require('./SimpleBot');
 const get = require('lodash.get');
 
-module.exports.default = class CustomClient {
+module.exports.default = class CustomBotClient {
 
     /**
-     * Creates an instance of CustomClient.
+     * Creates an instance of CustomBotClient.
      * @public
-     * @param {Object} botContext from chatpickle.config.*
-     * @param {Object} userContext from chatpickle.config.*
+     * @param {Object} botContext from chatpickle.config.json or .js
+     * @param {Object} userContext from chatpickle.config.json or .js
      */
     constructor (botContext, userContext) {
         this.botContext = botContext;
         this.userContext = userContext;
-        this.counter = 0;
         this.userId = `${userContext.userId}-${Date.now()}`;
+
+        this.bot = new SimpleBot(botContext);
 
         console.log(`[${this.userId}] New Conversation with ${this.botContext.botName}`);
     }
 
     /**
-     * Initialize asynchronous components
+     * Implementation of optional BotClient.initialize
+     * @public
      */
     async initialize () {
         console.log(`[${this.userId}] Initializing: ${new Date().toISOString()}`);
 
-        // Simulate an asynchronous process
-        const sleep = (ms) => {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-
-        await sleep(1000);
+        await this.bot.startSession(this.userContext);
 
         console.log(`[${this.userId}] Ready: ${new Date().toISOString()}`);
     }
 
     /**
+     * Implementation of required BotClient.speak
      * @public
      * @param {String} inputText user speech
      * @returns {String} bot speech
@@ -41,14 +40,7 @@ module.exports.default = class CustomClient {
     async speak (inputText) {
         console.log(`[${this.userId}] User: ${inputText}`);
 
-        const user = this.userContext.userAttributes;
-        const botMessages = [
-            `Good evening ${user.firstName} ${user.lastName}! Do you have a reservation with us?`,
-            'No problem at all, how many are in your party?',
-            `Thank you ${user.firstName}, please follow me to your table.`
-        ];
-        const reply = botMessages[this.counter];
-        this.counter++;
+        const reply = await this.bot.postText(inputText);
 
         console.log(`[${this.userId}] Bot: ${reply}`);
 
@@ -56,12 +48,13 @@ module.exports.default = class CustomClient {
     }
 
     /**
+     * Implementation of required BotClient.fetch
      * @public
      * @param {String} attributePath as lodash get syntax
      * @returns {*} value
      */
     async fetch (attributePath) {
-        return await get(this.userContext, attributePath);
+        return await get(this.bot.userContext, attributePath);
     }
   
 };
