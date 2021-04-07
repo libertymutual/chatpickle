@@ -1,5 +1,14 @@
 # Chatpickle Release Notes
 
+## v2.1.0
+New Custom Example
+* Includes:
+  * SimpleBot.js
+  * CustomBotClient.js
+  * feature files
+  * readme
+  * update to overall readme structure with links to example read-me's
+
 ## v2.0.6
 Update Dependencies
 
