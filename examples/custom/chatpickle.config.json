@@ -2,7 +2,7 @@
     "bots": {
         "RestaurantGreeter": {
             "type": "custom",
-            "location": "chatpickle/support/customBotClient.js",
+            "location": "chatpickle/support/CustomBotClient.js",
             "context": {
                 "botName": "Restaurant Greeter"
             }
