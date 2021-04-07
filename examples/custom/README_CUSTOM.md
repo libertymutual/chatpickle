@@ -14,7 +14,7 @@ You can define your own bot integration by using a few simple methods:
 You need a [chatpickle.config.json](chatpickle.config.json) (or .js) in the root of your node.js project and it should be formatted like the example provided.
 
 ### Create a chatpickle/ folder
-You also need a [chatpickle](chatpickle) folder in the root of your project.  This is where you will put your gherkin feature files which can leverage the extended chatpickle syntax.
+You also need a [chatpickle/](chatpickle) folder in the root of your project.  This is where you will put your gherkin feature files which can leverage the extended chatpickle syntax.
 
 ### Create a CustomBotClient
 
