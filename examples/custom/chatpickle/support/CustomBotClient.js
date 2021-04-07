@@ -20,7 +20,7 @@ module.exports.default = class CustomBotClient {
     }
 
     /**
-     * Implementation of optional BotClient.initialize
+     * Implementation of required BotClient.initialize
      * @public
      */
     async initialize () {
