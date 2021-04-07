@@ -1,6 +1,6 @@
 # 🥒 Chatpickle
 
-## Conversation Tests for Chatbots
+### Conversation Tests for Chatbots
 
 * Document conversational scenarios using Cucumber's Gherkin syntax.
 * Run them as tests against your deployed chatbot.
