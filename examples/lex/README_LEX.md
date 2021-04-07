@@ -2,11 +2,11 @@
 
 This sample project, [examples/lex](./), is designed to be pointed at the OrderFlowers and ScheduleAppointment bots as provided by AWS as a blueprint.
 
-### Create a chatpickle config
+### Create a config file
 
 You need a [chatpickle.config.json](chatpickle.config.json) (or .js) in the root of your node.js project and it should be formatted like the example provided.
 
-### Create a chatpickle folder
+### Create a chatpickle/ folder
 You also need a [chatpickle/](chatpickle) folder in the root of your project.  This is where you will put your gherkin feature files which can leverage the extended chatpickle syntax.
 
 ### Setup a Lex Chatbot

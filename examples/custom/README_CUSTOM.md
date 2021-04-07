@@ -9,7 +9,7 @@ You can define your own bot integration by using a few simple methods:
 * speak
 * fetch
 
-### Create a chatpickle config
+### Create a config file
 
 You need a [chatpickle.config.json](chatpickle.config.json) (or .js) in the root of your node.js project and it should be formatted like the example provided.
 

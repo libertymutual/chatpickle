@@ -18,7 +18,7 @@
 
 ### Configuring Chatpickle
 * Create a config file
-* Create a chatpickle folder for your feature files
+* Create a chatpickle/ folder for your feature files
 
 More Info: [Chatpickle Examples](examples)
 
