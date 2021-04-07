@@ -6,7 +6,7 @@
 * Run them as tests against your deployed chatbot.
 * Be confident in all of your bot's behaviors.
   
-## Supported Chatbot Integrations
+### Supported Chatbot Integrations
   * [AWS Lex](examples/lex/README_LEX.md)
     * Great for out of the box Lex
   * [Custom](examples/custom/README_CUSTOM.md)
