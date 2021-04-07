@@ -1,6 +1,6 @@
 # Custom Example
 
-Because we can't predict your use-case `¯\_(ツ)_/¯`
+Because we can't predict your use-case ¯\\\_(ツ)\_/¯
 
 This sample project, [examples/custom](./), demonstrates the flexibility of defining a custom bot client for interfacing with any chatbot.
 
