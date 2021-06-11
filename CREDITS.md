@@ -11,3 +11,4 @@ Thank you to all the contributors who made Chatpickle possible.
 * [Chris Plankey](https://github.com/cplankey)
 * [Seckin Arsoy](https://github.com/seckinarsoy)
 * [Chris Woods](https://github.com/bitspace)
+* [Benjamin Whitehead](https://github.com/benjamin-whitehead)
