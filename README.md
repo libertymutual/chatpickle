@@ -35,3 +35,6 @@ Want to see a new type of bot supported?
  * Add documentation for it in our [examples](examples)
 
 To help with known issues or needed improvements, check out our  [Issues](https://github.com/libertymutual/chatpickle/issues) on GitHub.
+
+### Credits
+Credits for Chatpickle can be found [here](CREDITS.md).

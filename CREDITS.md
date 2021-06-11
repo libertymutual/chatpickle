@@ -9,3 +9,5 @@ Thank you to all the contributors who made Chatpickle possible.
 * [Taylor Lapointe](https://github.com/taylor-lapointe)
 * [Steve Viens](https://github.com/stephenviens)
 * [Chris Plankey](https://github.com/cplankey)
+* [Seckin Arsoy](https://github.com/seckinarsoy)
+* [Chris Woods](https://github.com/bitspace)
