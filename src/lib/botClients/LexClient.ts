@@ -1,6 +1,8 @@
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 import get from 'lodash.get';
 import { BotClient } from './BotClient';
+import Polly from 'aws-sdk/clients/polly';
+import Fs from 'fs';
 
 export default class LexClient extends BotClient {
     private botName: string;
@@ -10,6 +12,10 @@ export default class LexClient extends BotClient {
     private sessionAttributes: any;
     private props: any;
     private lex: LexRuntime;
+    private Polly = new Polly({
+        signatureVersion: "v4",
+        region: 'us-east-1'
+    });
 
     constructor(botContext: any, userContext: any) {
         super(botContext, userContext);
@@ -33,15 +39,52 @@ export default class LexClient extends BotClient {
     public async speak(inputText: string): Promise<string> {
         console.log(`[${this.userId}] User: ${inputText}`);
 
+        let pollyParams = {
+            'Text': inputText,
+            'OutputFormat': 'pcm',
+            'VoiceId': 'Joanna'
+        };
+
+        let audioStream = '';
+
+        Polly.synthesizeSpeech(pollyParams, (err, data) => {
+            if (err) {
+                console.log(err.code)
+            } else if (data) {
+                if (data.AudioStream instanceof Buffer) {
+                    /**Fs.writeFile("./file.pcm", data.AudioStream, function(err) {
+                        if (err) {
+                            return console.log(err)
+                        }
+                        console.log("The file was saved!")
+                    })**/
+                    audioStream = data.AudioStream;
+                }
+            }
+        });
+
+        //let lexFileStream = Fs.createReadStream("./file.pcm");
+
         const params = {
             botName: this.botName,
             botAlias: this.botAlias,
             userId: this.userId,
             inputText,
             sessionAttributes: this.sessionAttributes,
+            contentType: 'audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false',
+            inputStream: audioStream
         };
 
-        this.lastResponse = await this.lex.postText(params).promise();
+
+        this.lastResponse = await this.lex.postContent(params, function(err, data) {
+            if (err) {
+                console.log(err, err.stack);
+            }
+            else {
+                console.log(data);
+            }
+        }).promise();
+
         this.sessionAttributes = this.lastResponse.sessionAttributes;
 
         const reply: string = this.lastResponse.message.trim();
