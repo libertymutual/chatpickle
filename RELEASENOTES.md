@@ -1,5 +1,8 @@
 # Chatpickle Release Notes
 
+## v2.2.0
+Readme includes credits page
+
 ## v2.1.0
 New Custom Example
 * Includes:
