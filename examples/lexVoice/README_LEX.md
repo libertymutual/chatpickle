@@ -1,6 +1,9 @@
 # AWS Lex Example
 
-This sample project, [examples/lex](./), is designed to be pointed at the OrderFlowers and ScheduleAppointment bots as provided by AWS as a blueprint.
+This sample project, [examples/lex and examples/lexVoice](./), is designed to be pointed at the OrderFlowers and ScheduleAppointment bots as provided by AWS as a blueprint.
+[examples/lex](./) uses the lex postText to post user responses and [examples/lexVoice](./) uses the lex postContent.
+
+Using the lexVoice, we can post audio content as the user response. Please take a look at [examples/lexVoice/chatpickle/schedule-appointment-bot.feature](./) where the audio file name is listed as the user response. Only pcm files are supported. We can also add mp3 and mpeg support in the future if needed.
 
 ### Create a config file
 
