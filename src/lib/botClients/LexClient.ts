@@ -44,7 +44,7 @@ export default class LexClient extends BotClient {
         this.lastResponse = await this.lex.postText(params).promise();
         this.sessionAttributes = this.lastResponse.sessionAttributes;
 
-        const reply: string = this.lastResponse.message.trim();
+        const reply: string = this.lastResponse.message? this.lastResponse.message.trim(): null;
 
         console.log(`[${this.userId}] Bot: ${reply}`);
 
