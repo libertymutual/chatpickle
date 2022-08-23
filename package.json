@@ -58,7 +58,7 @@
         "typescript": "^4.2.3"
     },
     "engines": {
-        "node": "^10 || ^12 || ^14 || ^15"
+        "node": "^10 || ^12 || ^14 || ^15 || ^16"
     },
     "jest-junit": {
         "outputDirectory": "reports",
