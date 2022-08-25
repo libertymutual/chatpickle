@@ -1,5 +1,8 @@
 # Chatpickle Release Notes
 
+## v2.3.0
+Adding v16 to supported node releases
+
 ## v2.2.0
 Readme includes credits page
 
