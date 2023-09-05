@@ -1,5 +1,9 @@
 # Chatpickle Release Notes
 
+## v2.2.2
+Adding v18 and v20 to supported node releases
+Adding dependabot upgrades
+
 ## v2.2.1
 Adding v16 to supported node releases
 
