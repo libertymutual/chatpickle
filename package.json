@@ -30,6 +30,7 @@
         "build:other": "cp -r src/cucumberSupport dist/cucumberSupport",
         "start": "npm run example:lex",
         "example:lex": "npm run build && node dist/cli.js --cpPath examples/lex/",
+        "example:lexVoice": "npm run build && node dist/cli.js --cpPath examples/lexVoice/",
         "example:custom": "npm run build && node dist/cli.js --cpPath examples/custom/",
         "test": "jest --reporters=default --reporters=jest-junit",
         "lint": "eslint \"{scripts,src,test}/**/*.{js,ts}\"",
