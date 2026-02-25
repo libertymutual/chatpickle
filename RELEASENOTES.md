@@ -1,5 +1,9 @@
 # Chatpickle Release Notes
 
+## v2.3.0
+
+Dropping support for Node versions prior to 20. Supported versions are now 20, 22, and 24.
+
 ## v2.2.3
 
 Adding v22 to supported node releases
