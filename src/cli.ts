@@ -25,17 +25,9 @@ for (let i = 0; i < passthruArgs.length; i++) {
     }
 }
 
-process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE = consumerPathArg
-    ? `${process.cwd()}/${consumerPathArg}`
-    : process.cwd();
+process.env.CHATPICKLE_CONSUMER_PATH_ABSOLUTE = consumerPathArg ? `${process.cwd()}/${consumerPathArg}` : process.cwd();
 
-const runArgs = [
-    null,
-    '',
-    ...passthruArgs,
-    '--require',
-    `${__dirname}/cucumberSupport`
-];
+const runArgs = [null, '', ...passthruArgs, '--require', `${__dirname}/cucumberSupport`];
 
 const featureFilePath = featureFilePathDetected ? null : `${consumerPathArg || ''}chatpickle`;
 
@@ -47,14 +39,14 @@ const cliArgs = { argv: runArgs, cwd: process.cwd(), stdout: process.stdout };
 const cli = new Cli(cliArgs);
 
 cli.run()
-    .then(result => {
+    .then((result) => {
         if (result.success) {
             process.exit(0);
         } else {
             process.exit(1);
         }
     })
-    .catch(err => {
+    .catch((err) => {
         console.error(err);
         process.exit(1);
     });
