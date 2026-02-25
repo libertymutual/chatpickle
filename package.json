@@ -22,7 +22,7 @@
         "dist"
     ],
     "bin": {
-        "chatpickle": "dist/cli.js"
+        "chatpickle": "./dist/cli.js"
     },
     "scripts": {
         "build": "rm -rf dist/* && npm run build:typescript && npm run build:other",
@@ -37,7 +37,7 @@
         "prepublish": "npm run build"
     },
     "dependencies": {
-        "aws-sdk": "^2.880.0",
+        "aws-sdk": "^2.1693.0",
         "chai": "^4.3.4",
         "cucumber": "^6.0.5",
         "lodash.get": "^4.4.2",
@@ -45,16 +45,16 @@
     },
     "devDependencies": {
         "@types/jest": "^26.0.22",
-        "@types/node": "^14.14.37",
+        "@types/node": "^14.18.63",
         "@typescript-eslint/eslint-plugin": "^4.21.0",
         "@typescript-eslint/parser": "^4.21.0",
         "eslint": "^7.23.0",
         "eslint-config-prettier": "^8.1.0",
         "eslint-plugin-prettier": "^3.3.1",
-        "jest": "^26.6.3",
+        "jest": "^29.7.0",
         "jest-junit": "^12.0.0",
         "prettier": "^2.2.1",
-        "ts-jest": "^26.5.4",
+        "ts-jest": "^29.4.6",
         "typescript": "^4.2.3"
     },
     "engines": {
