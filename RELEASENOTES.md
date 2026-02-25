@@ -1,8 +1,17 @@
 # Chatpickle Release Notes
 
-## v2.3.0
+## v2.3.6
 
-Dropping support for Node versions prior to 20. Supported versions are now 20, 22, and 24.
+Dependency updates via Dependabot
+
+## v2.3.5
+
+- Dropped support for Node versions prior to 20. Supported versions are now 20, 22, and 24
+- Updated GitHub Actions workflows to use actions/checkout@v4 and actions/setup-node@v4
+- Added npm Trusted Publishing (OIDC) for publishing to npm
+- Fixed ESLint config for eslint-config-prettier v8+ compatibility
+- Added skipLibCheck to tsconfig.json
+- Cleaned up deprecated workflow configurations
 
 ## v2.2.3
 
