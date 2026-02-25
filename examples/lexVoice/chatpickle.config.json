@@ -1,0 +1,33 @@
+{
+    "bots": {
+        "OrderFlowers": {
+            "type": "LexVoice",
+            "context": {
+                "botName": "OrderFlowers",
+                "botAlias": "prod",
+                "region": "us-east-1"
+            }
+        },
+        "ScheduleAppointment": {
+            "type": "LexVoice",
+            "context": {
+                "botName": "ScheduleAppointment",
+                "botAlias": "prod",
+                "region": "us-east-1"
+            }
+        }
+    },
+    "users": {
+        "homer": {
+            "description": "Basic User Profile",
+            "context": {
+                "userId": "homer",
+                "userAttributes": {
+                    "firstName": "Homer",
+                    "lastName": "Simpson",
+                    "address": "Springfield"
+                }
+            }
+        }
+    }
+}

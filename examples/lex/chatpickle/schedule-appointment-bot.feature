@@ -11,3 +11,5 @@ Feature: ScheduleAppointment Bot
         * User: four pm
         * Bot: /\d{2}:\d{2} is available, should I go ahead and book your appointment\?/
         * User: yes
+
+
