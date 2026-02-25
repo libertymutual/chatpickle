@@ -30,6 +30,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          registry-url: https://registry.npmjs.org
+      - name: Remove auth token to allow OIDC Trusted Publishing
+        run: sed -i '/_authToken/d' "$NPM_CONFIG_USERCONFIG"
       - run: npm ci
       - run: npm publish --provenance --access public
 
