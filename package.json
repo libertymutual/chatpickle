@@ -22,7 +22,7 @@
         "dist"
     ],
     "bin": {
-        "chatpickle": "dist/cli.js"
+        "chatpickle": "./dist/cli.js"
     },
     "scripts": {
         "build": "rm -rf dist/* && npm run build:typescript && npm run build:other",
@@ -37,7 +37,7 @@
         "prepublish": "npm run build"
     },
     "dependencies": {
-        "aws-sdk": "^2.880.0",
+        "aws-sdk": "^2.1693.0",
         "chai": "^4.3.4",
         "cucumber": "^6.0.5",
         "lodash.get": "^4.4.2",

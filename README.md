@@ -23,9 +23,25 @@
 More Info: [Chatpickle Examples](examples)
 
 ### Running Chatpickle
-From your project root, or added as a script to your package.json:
+Add it as a script in your `package.json`:
+```json
+{
+  "scripts": {
+    "chatpickle-tests": "chatpickle"
+  }
+}
+```
+Then run:
 
-`chatpickle`
+`npm run chatpickle-tests`
+
+Or run it directly without adding a script using npx:
+
+`npx chatpickle`
+
+To use the `chatpickle` command globally from any terminal session, install it globally:
+
+`npm install -g chatpickle`
 
 ### Extending Chatpickle
 You can help extend chatpickle by contributing to our open source project [https://github.com/libertymutual/chatpickle](https://github.com/libertymutual/chatpickle)
