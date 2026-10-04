@@ -1,3 +1,4 @@
+import { randomUUID } from 'crypto';
 import LexRuntime from 'aws-sdk/clients/lexruntime';
 import get from 'lodash.get';
 import { BotClient } from './BotClient';
@@ -15,7 +16,7 @@ export default class LexClient extends BotClient {
         super(botContext, userContext);
         this.botName = this.botContext.botName;
         this.botAlias = this.botContext.botAlias;
-        this.userId = `${this.userContext.userId}-${Date.now()}`;
+        this.userId = `${this.userContext.userId}-${randomUUID()}`;
         this.lastResponse = null;
         this.sessionAttributes = this.userContext.userAttributes;
 

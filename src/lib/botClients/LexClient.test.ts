@@ -34,3 +34,20 @@ test('LexClient.speak()', async (): Promise<void> => {
     const reply = await botClient.speak('Hello World');
     expect(reply).toBe('This is a mocked message.');
 });
+
+test('LexClient uses a unique userId for each conversation', async (): Promise<void> => {
+    const botContext = { botName: 'OrderFlowers', botAlias: 'prod', region: 'us-east-1' };
+    const userContext = { userId: 'homer', userAttributes: {} };
+    lexRuntimePostTextPromise.mockClear();
+
+    const firstClient = new LexClient(botContext, userContext);
+    const secondClient = new LexClient(botContext, userContext);
+    await firstClient.speak('Hello');
+    await secondClient.speak('Hello');
+
+    const firstUserId = lexRuntimePostTextPromise.mock.calls[0][0].userId;
+    const secondUserId = lexRuntimePostTextPromise.mock.calls[1][0].userId;
+    expect(firstUserId).toMatch(/^homer-[0-9a-f-]{36}$/);
+    expect(secondUserId).toMatch(/^homer-[0-9a-f-]{36}$/);
+    expect(firstUserId).not.toBe(secondUserId);
+});
